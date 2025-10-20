@@ -223,8 +223,8 @@ input{
 
 #serve{
   display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;     /* centers vertically (if you set a height) */
+  justify-content: center;
+  align-items: center; 
   gap: 20px; 
   padding: 20px;
 }
