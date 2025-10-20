@@ -5,15 +5,276 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Single Page App</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div>
+    
+    <div id="title" class="center">
+      <img src="photos/title.webp"/>
+    </div>
 
-  <div id="app"></div>
+    <div id="space"></div>
+
+    <div id="mar" class="center">
+      <p style="font-size: 25px" class="fade-in">MARCI METZGER - THE RIDGE REALTY GROUP</p>
+      <h1 style="font-size:90px; font-weight: 100" class="fade-in" ><i>PAHRUMP REALTOR</i></h1>
+      <button id="call-btn" class="fade-in glow-btn">CALL NOW</button>
+    </div>
+
+    <div>
+      <section id="marci" class="center">
+        <h2 id="marc" class="fade-in">MARCI METZGER</h2>
+        <img src="photos/Marci.webp" class="circle fade-in"/>
+        <p style="font-size: 30px" class="fade-in">REALTOR FOR NEARLY 3 DECADES!</p>
+        <p style="font-size: 20px" class="fade-in">206-919-6886</p>
+      </section>
+    </div>
+
+    <div>
+      <section id="show" class="center">
+        <h1 style="font-size:40px ; font-weight: 300; padding: 20px" class="fade-in">Get is sold!</h1>
+      <div class="box">
+        <img class="fade-in" src="photos/kitchen.webp"/>
+        <div>
+            <h4 style="font-size: large;" class="fade-in">Top Residential Sales Last 5 Years</h4>
+            <p class="fade-in">We helped nearly 90 clients in 2021, and closed 28.5 million in sales! 
+                Our team works hard everyday to grow and learn, so that we may continue 
+                to excel in our market. Our clients deserve our best, & we want to make 
+                sure our best is better every year.</p>
+        </div>
+      </div>
+      <div class="box">
+        <div>
+            <h4 style="font-size: large;" class="fade-in">Don't Just List it...</h4>
+            <p class="fade-in">Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips 
+                of every possible buyer, getting you top dollar for your home.</p>
+        </div>
+        <img class="fade-in" src="photos/backyard.webp"/>
+      </div>
+      <div class="box">
+        <img class="fade-in" src="photos/keys.webp"/>
+        <div>
+            <h4 style="font-size: large;" class="fade-in">Guide to Buyers</h4>
+            <p class="fade-in">Nobody knows the market like we do. Enjoy having a pro at your service. 
+                Market analysis, upgrades lists, contractors on speed dial, & more!</p>
+        </div>
+      </div>
+      </section>
+    </div>
+    
+    <div>
+      <div id="back">
+        <h4 style="text-align: center; font-size:80px; color: rgb(252, 252, 252);">Find your dream home</h4>
+          <div id="search">
+            <h4 style="text-align:center" class="fade-in">Search Listing</h4>
+            <form id="search-form" class="fade-in">
+              <div class="search-parameter">
+                <div class="column-stack">
+                  <label>Location</label>
+                  <select></select>
+                </div>
+                
+                <div class="column-stack">
+                  <label>Type</label>
+                  <select></select>
+                </div>
+                <div class="column-stack">
+                  <label>Sort by</label>
+                    <select>
+                      <option></option>
+                      <option>Newest</option>
+                      <option>Oldest</option>
+                      <option>Least Expensive to Most</option>
+                      <option>Most Expensive to Least</option>
+                      <option>Bedrooms(Low to High)</option>
+                      <option>Bedrooms(High to Low)</option>
+                      <option>Bathrooms(Low to High)</option>
+                      <option>Bathrooms(High to Low)</option>
+                    </select>
+                </div>
+              </div>
+              <div class="search-parameter">
+                <div  class="column-stack">
+                  <label>Bedrooms</label>
+                <select>
+                  <option>Any Number</option>
+                  <option>1+</option>
+                  <option>2+</option>
+                  <option>3+</option>
+                  <option>4+</option>
+                  <option>5+</option>
+                  <option>6+</option>
+                </select>
+                </div>
+                <div class="column-stack">
+                  <label>Baths</label>
+                <select>
+                  <option>Any Number</option>
+                  <option>1+</option>
+                  <option>2+</option>
+                  <option>3+</option>
+                  <option>4+</option>
+                  <option>5+</option>
+                  <option>6+</option>
+                </select>
+                </div>
+                <div class="column-stack">
+                  <label>Min Price</label>
+                <input>
+                </div>
+                <div class="column-stack">
+                  <label>Max Price</label>
+                <input>
+                </div>
+                
+              </div>
+              <button id="search-nt" disabled>Search Now</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <div id="sponsor" class="fade-in">
+        <img src="photos/ridge.webp"/>
+        <img src="photos/equal host.webp"/>
+        <img src="photos/realtor.webp"/>
+        <img src="photos/pharump.webp"/>
+    </div>
+
+    <div id="outer-gal">
+    <div class="gallery fade-in">
+        <h4 style="font-size: 40px; font-weight:300">PHOTO GALLERY</h4>
+        <div class="photo-container">
+          <button class="nav-btn prev">❮</button>
+          <img id="main-photo" src="photos/photogal1.webp" alt="Main Photo">
+          <button class="nav-btn next">❯</button>
+        </div>
+
+        <div class="thumbnails">
+          <img src="photos/photogal1.webp" alt="1" class="active">
+          <img src="photos/photogal2.webp" alt="2">
+          <img src="photos/photogal3.webp" alt="3">
+          <img src="photos/photogal4.webp" alt="4">
+          <img src="photos/photogal5.webp" alt="5">
+          <img src="photos/photogal6.webp" alt="6">
+          <img src="photos/photogal7.webp" alt="7">
+        </div>
+
+    </div>
+  </div>
+
+    <div id="services" class="center">
+        <h4 style="font-size:30px; font-weight:500;" class="fade-in">OUR SERVICES</h4>
+        <div id="serve">
+        <div>
+          <img class="fade-in" src="photos/table.webp">
+          <h4 class="fade-in">Real Estate Done Right</h4>
+          <p class="fade-in">Nervous about your property adventure? 
+            Don't be. Whether you're getting ready to buy or sell your residence, 
+            looking at investment properties, or just curious about the markets, 
+            our team ensures you get the best experience possible!</p>
+        </div>
+        <div>
+          <img class="fade-in" src="photos/outdoorBackyard.webp">
+          <h4 class="fade-in">Commercial & Residential</h4>
+          <p class="fade-in">Large or small, condo or mansion, we can find it and get at the price that's right. 
+            Fixer-uppers? Luxury? We can help with all of it! We live, work, and play in this community. 
+            Happy to help you find where to put you hard-earned dollars.</p>
+        </div>
+        <div>
+          <img src="photos/hands.webp" class="circle fade-in">
+          <h4 class="fade-in">Rely on Expertise</h4>
+          <p class="fade-in">If you have questions about affordability, credit, and loan options, trust 
+            us to connect you with the right people to get the answers you need in a timely fashion. 
+            We make sure you feel confident and educated every step of the way.</p>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="social">
+      <a href="https://www.facebook.com/MarciHomes/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/icons8-facebook.svg"/>
+      </a>
+      <a href="https://www.instagram.com/marciandlauren_nvrealtors/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/icons8-instagram.svg"/>
+      </a>
+      <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/icons8-linkedin.svg"/>
+      </a>
+      <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/yelp-svgrepo-com.svg"/>
+      </a>
+    </div>
+
+    <div id="call">
+        <h4 style="font-size: 40px" class="fade-in">Call or Visit</h4>
+        <div id="call-read">
+            <div>
+              <form id="call-form" class="fade-in">
+                <h4 style="font-size: 20px">Send Message</h4>
+                <div class="column-stack">
+                  <label>Name</label>
+                <input class="input-call">
+                </div>
+                <div class="column-stack">
+                  <label>Email</label>
+                <input class="input-call">
+                </div>
+                <div class="column-stack">
+                  <label>Message</label>
+                <textarea rows="4"  cols="10"  placeholder="Message"></textarea>
+                </div>
+                
+                <button style="width: 300px; height: 30px" class="glow-btn">Send</button>
+              </form>
+              <p style="font-size: small;" class="fade-in">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+            </div>
+            <div id="whats">
+              <button onclick="window.open('https://api.whatsapp.com/send/?phone=14259412560&text&type=phone_number&app_absent=0', '_blank')" class="glow-btn fade-in">Message on WhatsApp</button>
+              <h4 style="font-size: 20px" class="fade-in">Marci Metzger - THE RIDGE REALTY GROUP</h4>
+              <p class="fade-in">3190 HW-160, Suite F, Pahrump, Nevada 89048, United States</p>
+              <p class="fade-in">(206) 919-6886</p>
+              <div>
+                <h4 style="font-size: 20px" class="fade-in">Office Hours</h4>
+                <p class="fade-in">Open daily   8:00am-7:00pm</p>
+                <p class="fade-in">Appointments outside office hours available upon request. Just call!</p>
+              </div>
+            </div>
+        </div>
+        <div style="width: 100%; height: 400px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d25757.025149208734!2d-115.99213434779142!3d36.19992446652829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s3190%20HW-160%2C%20Suite%20F%2C%20Pahrump%2C%20Nevada%2089048%2C%20United%20States!5e0!3m2!1sen!2sph!4v1760783523572!5m2!1sen!2sph" 
+          width="100%" 
+          height="350px" 
+          style="border:0;" 
+          allowfullscreen
+          loading="lazy" 
+          class="fade-in"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+  </main>
+
+  <footer style="background-color: black; width: 100%; height: 350px; text-align: center; padding: 30px">
+    <div>
+      <a href="https://www.facebook.com/MarciHomes/" target="_blank">
+      <img style="width: 36px; height: 36px" src="icons/icons8-facebook.svg"/>
+      </a>
+      <a href="https://www.instagram.com/marciandlauren_nvrealtors/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/icons8-instagram.svg"/>
+      </a>
+      <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/icons8-linkedin.svg"/>
+      </a>
+      <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank">
+        <img style="width: 36px; height: 36px" src="icons/yelp-svgrepo-com.svg"/>
+      </a>
+    </div>
+    <p class="fade-in" style="color: white;">Copyright © 2023 Marci METZGER Homes - All Rights Reserved</p>
+    <p class="fade-in" style="color: white;">POWERED BY</p>
+    <p class="fade-in" style="color: white;">GoDaddy Airo</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -1,18 +1,71 @@
-const app = document.getElementById('app');
+const faders = document.querySelectorAll('.fade-in');
 
-function navigate() {
-  const hash = window.location.hash || '#home';
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible'); 
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.2 }); 
 
-  if (hash === '#home') {
-    app.innerHTML = '<h1>Welcome to Home</h1><p>This is your homepage.</p>';
-  } else if (hash === '#about') {
-    app.innerHTML = '<h1>About</h1><p>This is the about page.</p>';
-  } else if (hash === '#contact') {
-    app.innerHTML = '<h1>Contact</h1><p>Here’s how you can reach us.</p>';
-  } else {
-    app.innerHTML = '<h1>404</h1><p>Page not found.</p>';
-  }
+faders.forEach(el => observer.observe(el));
+
+const mainPhoto = document.getElementById('main-photo');
+const thumbnails = document.querySelectorAll('.thumbnails img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+let intervalTime = 3000; 
+
+function changePhoto(index) {
+  const thumb = thumbnails[index];
+  mainPhoto.style.opacity = 0;
+
+  setTimeout(() => {
+    mainPhoto.src = thumb.src.replace('/100/70', '/600/400');
+    mainPhoto.style.opacity = 1;
+  }, 300);
+
+  thumbnails.forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
 }
 
-window.addEventListener('hashchange', navigate);
-window.addEventListener('load', navigate);
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener('click', () => {
+    currentIndex = index;
+    changePhoto(currentIndex);
+    resetAutoSlide(); 
+  });
+});
+
+
+function startAutoSlide() {
+  return setInterval(() => {
+    currentIndex++;
+    if (currentIndex >= thumbnails.length) {
+      currentIndex = 0; 
+    }
+    changePhoto(currentIndex);
+  }, intervalTime);
+}
+
+let slideInterval = startAutoSlide();
+function resetAutoSlide() {
+  clearInterval(slideInterval);
+  slideInterval = startAutoSlide();
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+  changePhoto(currentIndex);
+  resetAutoSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % thumbnails.length;
+  changePhoto(currentIndex);
+  resetAutoSlide();
+});
